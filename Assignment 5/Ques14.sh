@@ -8,15 +8,7 @@ then
 	if [ -d $path ] 
 	then
 		echo "File is Directory"
-			
-	elif [ -f $path ] 
-	then
-		echo "Regular file"
-		if [ -x $path ]
-		then
-			echo "File is executable"
-				stat -c %s $path
-		fi
+		-x $path
 	fi
 else
 	echo "File doesn't exist"
